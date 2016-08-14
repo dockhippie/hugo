@@ -1,16 +1,16 @@
-# NodeJS
+# Hugo
 
-[![](https://badge.imagelayers.io/webhippie/nodejs:latest.svg)](https://imagelayers.io/?images=webhippie/nodejs:latest 'Get your own badge on imagelayers.io')
+[![](https://badge.imagelayers.io/webhippie/hugo:latest.svg)](https://imagelayers.io/?images=webhippie/hugo:latest 'Get your own badge on imagelayers.io')
 
-These are docker images for [NodeJS](https://nodejs.org) running on an
+These are docker images for [Hugo](https://gohugo.io) running on an
 [Alpine Linux container](https://registry.hub.docker.com/u/webhippie/alpine/).
 
 
 ## Versions
 
-* [latest](https://github.com/dockhippie/nodejs/tree/master)
-  available as ```webhippie/nodejs:latest``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/nodejs/)
+* [latest](https://github.com/dockhippie/hugo/tree/master)
+  available as ```webhippie/hugo:latest``` at
+  [Docker Hub](https://registry.hub.docker.com/u/webhippie/hugo/)
 
 
 ## Volumes
