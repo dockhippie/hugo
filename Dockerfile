@@ -9,6 +9,8 @@ CMD ["server"]
 
 RUN apk update && \
   apk add \
+    make \
+    git \
     hugo@testing && \
   rm -rf \
     /var/cache/apk/*
