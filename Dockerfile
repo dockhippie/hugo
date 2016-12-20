@@ -11,6 +11,6 @@ RUN apk update && \
   apk add \
     make \
     git \
-    hugo@testing && \
+    hugo && \
   rm -rf \
     /var/cache/apk/*
