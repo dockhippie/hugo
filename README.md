@@ -1,16 +1,13 @@
 # Hugo
 
-[![](https://badge.imagelayers.io/webhippie/hugo:latest.svg)](https://imagelayers.io/?images=webhippie/hugo:latest 'Get your own badge on imagelayers.io')
+[![](https://images.microbadger.com/badges/image/webhippie/hugo.svg)](https://microbadger.com/images/webhippie/hugo "Get your own image badge on microbadger.com")
 
-These are docker images for [Hugo](https://gohugo.io) running on an
-[Alpine Linux container](https://registry.hub.docker.com/u/webhippie/alpine/).
+These are docker images for [Hugo](https://gohugo.io) running on an [Alpine Linux container](https://registry.hub.docker.com/u/webhippie/alpine/).
 
 
 ## Versions
 
-* [latest](https://github.com/dockhippie/hugo/tree/master)
-  available as ```webhippie/hugo:latest``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/hugo/)
+* [latest](https://github.com/dockhippie/hugo/tree/master) available as ```webhippie/hugo:latest``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/hugo/)
 
 
 ## Volumes
@@ -25,20 +22,14 @@ These are docker images for [Hugo](https://gohugo.io) running on an
 
 ## Available environment variables
 
-**None**
+```bash
+```
 
 
 ## Inherited environment variables
 
 ```bash
-ENV LOGSTASH_ENABLED false
-ENV LOGSTASH_HOST logstash
-ENV LOGSTASH_PORT 5043
-ENV LOGSTASH_CA /etc/ssl/logstash/certs/ca.pem # As string or filename
-ENV LOGSTASH_CERT /etc/ssl/logstash/certs/cert.pem # As string or filename
-ENV LOGSTASH_KEY /etc/ssl/logstash/private/cert.pem # As string or filename
-ENV LOGSTASH_TIMEOUT 15
-ENV LOGSTASH_OPTS
+ENV CRON_ENABLED false
 ```
 
 
@@ -60,5 +51,5 @@ MIT
 ## Copyright
 
 ```
-Copyright (c) 2015-2016 Thomas Boerger <http://www.webhippie.de>
+Copyright (c) 2015-2017 Thomas Boerger <http://www.webhippie.de>
 ```
