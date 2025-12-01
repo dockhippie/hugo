@@ -1,4 +1,4 @@
-FROM webhippie/alpine:latest@sha256:99d99e5b29c450d387425c03ee3e43361a25db01797f3b4c68035da42ac84e1c
+FROM webhippie/alpine:latest@sha256:32cb1b1fbfa480ac1f1b8b749b4a403d5a31c3ea06da27c4ed06958e68e72241
 MAINTAINER Thomas Boerger <thomas@webhippie.de>
 
 VOLUME ["/srv/app"]
