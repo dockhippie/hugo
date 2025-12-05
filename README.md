@@ -1,55 +1,54 @@
-# Hugo
+# hugo
 
-[![](https://images.microbadger.com/badges/image/webhippie/hugo.svg)](https://microbadger.com/images/webhippie/hugo "Get your own image badge on microbadger.com")
+[![Docker Build](https://github.com/dockhippie/hugo/actions/workflows/docker.yml/badge.svg)](https://github.com/dockhippie/hugo/actions/workflows/docker.yml) [![GitHub Repo](https://img.shields.io/badge/github-repo-yellowgreen)](https://github.com/dockhippie/hugo)
 
-These are docker images for [Hugo](https://gohugo.io) running on an [Alpine Linux container](https://registry.hub.docker.com/u/webhippie/alpine/).
-
+These are docker images for [Hugo][upstrem] running on our
+[Alpine Linux image][parent].
 
 ## Versions
 
-* [latest](https://github.com/dockhippie/hugo/tree/master) available as ```webhippie/hugo:latest``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/hugo/)
-
+For the available versions please look at [Docker Hub][dockerhub] or
+[Quay][quayio] or check the existing folders within the
+[GitHub repository][github].
 
 ## Volumes
 
-* /srv/app
-
+*  /srv/app
 
 ## Ports
 
-* None
-
+*  None
 
 ## Available environment variables
 
-```bash
-```
+```console
 
+```
 
 ## Inherited environment variables
 
-```bash
-ENV CRON_ENABLED false
-```
-
+*  [webhippie/alpine](https://github.com/dockhippie/alpine#available-environment-variables)
 
 ## Contributing
 
 Fork -> Patch -> Push -> Pull Request
 
-
 ## Authors
 
-* [Thomas Boerger](https://github.com/tboerger)
-
+*  [Thomas Boerger](https://github.com/tboerger)
 
 ## License
 
 MIT
 
-
 ## Copyright
 
+```console
+Copyright (c) 2015 Thomas Boerger <http://www.webhippie.de>
 ```
-Copyright (c) 2015-2017 Thomas Boerger <http://www.webhippie.de>
-```
+
+[upstream]: https://gohugo.io
+[parent]: https://github.com/dockhippie/alpine
+[dockerhub]: https://hub.docker.com/r/webhippie/hugo/tags
+[quayio]: https://quay.io/repository/webhippie/hugo?tab=tags
+[github]: https://github.com/dockhippie/hugo

@@ -1,6 +1,6 @@
 ---
 # yaml-language-server: $schema=https://www.schemastore.org/github-workflow.json
-name: latest
+name: v0.152
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -12,11 +12,14 @@ concurrency:
     branches:
       - master
     paths:
-      - latest/*
-      - .github/workflows/docker.yml
+      - v0.152/*
+      - .github/workflows/v0.152.yml
   pull_request:
     branches:
       - master
+    paths:
+      - v0.152/*
+      - .github/workflows/v0.152.yml
 
 permissions:
   contents: read
@@ -88,18 +91,18 @@ jobs:
         uses: docker/build-push-action@263435318d21b8e681c14492fe198d362a7d2c83 # v6
         with:
           builder: ${{ steps.buildx.outputs.name }}
-          context: latest/
+          context: v0.152/
           provenance: false
-          file: latest/Dockerfile.${{ matrix.variant.arch }}
+          file: v0.152/Dockerfile.${{ matrix.variant.arch }}
           platforms: ${{ matrix.variant.platform }}
           push: ${{ github.event_name != 'pull_request' }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
           tags: |
-            webhippie/hugo:latest-${{ matrix.variant.arch }}
-            quay.io/webhippie/hugo:latest-${{ matrix.variant.arch }}
-            ghcr.io/dockhippie/hugo:latest-${{ matrix.variant.arch }}
+            webhippie/hugo:0.152-${{ matrix.variant.arch }}
+            quay.io/webhippie/hugo:0.152-${{ matrix.variant.arch }}
+            ghcr.io/dockhippie/hugo:0.152-${{ matrix.variant.arch }}
 
   manifest:
     runs-on: ubuntu-latest
@@ -118,8 +121,8 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           platforms: linux/amd64,linux/arm64,linux/arm/v6
-          template: webhippie/hugo:latest-ARCH
-          target: webhippie/hugo:latest
+          template: webhippie/hugo:0.152-ARCH
+          target: webhippie/hugo:0.152
           ignore_missing: true
 
       - name: Quay manifest
@@ -128,8 +131,8 @@ jobs:
           username: ${{ secrets.QUAY_USERNAME }}
           password: ${{ secrets.QUAY_PASSWORD }}
           platforms: linux/amd64,linux/arm64,linux/arm/v6
-          template: quay.io/webhippie/hugo:latest-ARCH
-          target: quay.io/webhippie/hugo:latest
+          template: quay.io/webhippie/hugo:0.152-ARCH
+          target: quay.io/webhippie/hugo:0.152
           ignore_missing: true
 
       - name: Ghcr manifest
@@ -138,8 +141,8 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           platforms: linux/amd64,linux/arm64,linux/arm/v6
-          template: ghcr.io/dockhippie/hugo:latest-ARCH
-          target: ghcr.io/dockhippie/hugo:latest
+          template: ghcr.io/dockhippie/hugo:0.152-ARCH
+          target: ghcr.io/dockhippie/hugo:0.152
           ignore_missing: true
 
 ...
