@@ -8,7 +8,7 @@ RUN apk add --no-cache build-base && \
   -tags extended,withdeploy \
   github.com/gohugoio/hugo@latest
 
-FROM ghcr.io/dockhippie/alpine:3.23-arm64@sha256:1e14dc19caca0a87e98fb6066851712c4bfc9bcd9202ce6598161eb6d1b8bfff
+FROM ghcr.io/dockhippie/alpine:3.23-amd64
 
 VOLUME ["/srv/app"]
 WORKDIR /srv/app
