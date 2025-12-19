@@ -1,4 +1,4 @@
-FROM ghcr.io/dockhippie/golang:1.25-arm@sha256:139ed04eae44cefe0b8c8497ed03052dabc32e606d54b59282ccd626dbfb8b1f AS build
+FROM ghcr.io/dockhippie/golang:1.25-arm@sha256:1dc1ec7da78199c2138f52822f5d1c7ba4cc9a05e45b73e6cf39fb9c12f060a3 AS build
 
 ENV GO_ENABLED=1
 
@@ -8,7 +8,7 @@ RUN apk add --no-cache build-base && \
   -tags extended,withdeploy \
   github.com/gohugoio/hugo@latest
 
-FROM ghcr.io/dockhippie/alpine:3.23-arm@sha256:dc59f99dd7ffa2a1ec10c24a3394179c285543e3489563e73ed61d6b327f873b
+FROM ghcr.io/dockhippie/alpine:3.23-arm@sha256:4eee74ccd31f9ca965ef3c8d1f2b09f8a13fe18c9220ad42a7821a47745b143e
 
 VOLUME ["/srv/app"]
 WORKDIR /srv/app
