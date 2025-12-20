@@ -1,7 +1,7 @@
 FROM ghcr.io/dockhippie/golang:1.25-arm@sha256:96e7ae6fd78f0d65e3c8fcb8093a7ac0f96c3e8633f08956354a79f1bc620b24 AS build
 
 # renovate: datasource=github-tags depName=gohugoio/hugo
-ENV HUGO_VERSION=0.153.0
+ENV HUGO_VERSION=0.153.1
 
 ENV GO_ENABLED=1
 
