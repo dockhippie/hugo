@@ -1,4 +1,4 @@
-FROM ghcr.io/dockhippie/golang:1.25-arm64@sha256:6b9f63cfd1083861ee851686108f7255ea9b9bd3ecb879fb4991b1d24e695cd5 AS build
+FROM ghcr.io/dockhippie/golang:1.25-arm64@sha256:7ff02c15d72281890a90f99d2c9c985343fe985153e62f10826786a3d3879fe5 AS build
 
 # renovate: datasource=github-tags depName=gohugoio/hugo
 ENV HUGO_VERSION=0.153.1
@@ -11,7 +11,7 @@ RUN apk add --no-cache build-base && \
   -tags extended,withdeploy \
   github.com/gohugoio/hugo@v${HUGO_VERSION}
 
-FROM ghcr.io/dockhippie/alpine:3.23-arm64@sha256:5f404ee41ac2add2af9db7d98d4ea25c8fe58847fa3c9cb4430768100480e2ab
+FROM ghcr.io/dockhippie/alpine:3.23-arm64@sha256:caae0c7a4645563598d40ba12052afc1cd605fefeefaa6a2f916a7eb445f0e17
 
 VOLUME ["/srv/app"]
 WORKDIR /srv/app
