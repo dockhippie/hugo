@@ -1,6 +1,6 @@
 repository:
   name: hugo
-  description: Docker images for hugo
+  description: Docker images for Hugo
   topics: docker, image
 
   private: false
