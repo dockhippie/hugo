@@ -3,5 +3,35 @@
     "extends": [
         "github>dockhippie/.github//renovate/preset"
     ],
-    "packageRules": []
+    "packageRules": [
+        {
+            "description": "Update tags without merge",
+            "matchDatasources": [
+                "github-tags"
+            ],
+            "matchUpdateTypes": [
+                "major",
+                "minor"
+            ],
+            "enabled": false,
+            "automerge": false,
+            "matchPackageNames": [
+                "gohugoio/hugo"
+            ]
+        },
+        {
+            "description": "Update tags without merge",
+            "matchDatasources": [
+                "github-tags"
+            ],
+            "matchUpdateTypes": [
+                "patch"
+            ],
+            "enabled": true,
+            "automerge": true,
+            "matchPackageNames": [
+                "gohugoio/hugo"
+            ]
+        }
+    ]
 }
