@@ -1,0 +1,27 @@
+FROM ghcr.io/dockhippie/golang:1.26-amd64 AS build
+
+# renovate: datasource=github-tags depName=gohugoio/hugo
+ENV HUGO_VERSION=0.163.0
+
+ENV GO_ENABLED=1
+
+RUN apk add --no-cache build-base && \
+  go install \
+  -ldflags '-s -w -X "github.com/gohugoio/hugo/common/hugo.vendorInfo=dockhippie" -X "github.com/gohugoio/hugo/common/hugo.buildDate='$(date -u +"%Y-%m-%dT%H:%M:%SZ")'"' \
+  -tags extended,withdeploy \
+  github.com/gohugoio/hugo@v${HUGO_VERSION}
+
+FROM ghcr.io/dockhippie/alpine:latest-amd64@sha256:8b11cb7689488ea128269fc7e7e57d0b493c6108baf8dfd02e793541fadf1d3f
+
+VOLUME ["/srv/app"]
+WORKDIR /srv/app
+ENTRYPOINT ["/usr/bin/hugo"]
+CMD ["server"]
+
+RUN apk update && \
+  apk upgrade && \
+  apk add make go dart-sass@testing git && \
+  rm -rf /var/cache/apk/*
+
+COPY --from=build /srv/app/bin/hugo /usr/bin/hugo
+COPY ./overlay /
