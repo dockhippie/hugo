@@ -1,4 +1,4 @@
-FROM ghcr.io/dockhippie/golang:1.27-amd64 AS build
+FROM ghcr.io/dockhippie/golang:1.27-amd64@sha256:67570f266a13610b94e4bfc600df713c85e60c199d4611bc659d5817916092aa AS build
 
 ENV GO_ENABLED=1
 
