@@ -1,4 +1,4 @@
-FROM ghcr.io/dockhippie/golang:1.26-amd64@sha256:0543d97ccfffbdfbb83fcdaec895a39c2c14e4a1138a077c8182b4a1bbc40eb4 AS build
+FROM ghcr.io/dockhippie/golang:1.27-amd64@sha256:f88027e451e641b5ad0f3659e8b6babaec1b4234502d2336cb90a9470a387685 AS build
 
 # renovate: datasource=github-tags depName=gohugoio/hugo
 ENV HUGO_VERSION=0.152.2
